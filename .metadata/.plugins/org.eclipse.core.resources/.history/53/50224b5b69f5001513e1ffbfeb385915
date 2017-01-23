@@ -1,0 +1,23 @@
+/*
+ * main.cpp
+
+ *
+ *  Created on: Mar 29, 2016
+ *      Author: ececlass
+ */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	cin >> x1;
+	cin >> x2:
+	cin >> x3;
+
+	 return 0;
+
+}
+
+
+

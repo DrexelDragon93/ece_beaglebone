@@ -1,0 +1,52 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Mar 31, 2016
+ *      Author: ececlass
+ */
+
+#include <iostream>
+#include<stdio.h>
+
+using namespace std;
+
+/*float fib(float n){
+
+	if(n<=1)
+		return n;
+	return fib(n-1) + fib(n-2);
+
+}
+
+int main() {
+
+	float x0,result;
+
+	cout << "Enter a single integer: ";
+	cin >> x0;
+
+	result = fib(x0);
+	cout << "The Fibonacci number is: ";
+	cout << result << endl;
+
+	return 0;
+
+}*/
+
+int fib(int n)
+{
+   if (n <= 1)
+      return n;
+   return fib(n-1) + fib(n-2);
+}
+
+int main ()
+{
+  int n = 9;
+  printf("%d", fib(n));
+  getchar();
+  return 0;
+}
+
+
+

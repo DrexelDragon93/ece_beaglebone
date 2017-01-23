@@ -1,0 +1,28 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Apr 12, 2016
+ *      Author: ececlass
+ */
+
+#include <iostream>
+#include <string>
+#include <unistd.h>
+#include "SimpleGPIO.h"
+using namespace std;
+
+unsigned int LEDGPIO = 49;   // GPIO1_17 = (1x32) + 17 = 60
+unsigned int ButtonGPIO = 115;   //  GPIO3_19 = (3x32) + 19 = 15
+
+int main(int argc, char *argv[]){
+
+
+
+
+
+
+
+
+
+}
+

@@ -1,0 +1,75 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Apr 29, 2016
+ *      Author: ececlass
+ */
+
+
+
+
+int main(){
+	PWM pwm("pwm_test_P9_22.16");  //
+	gpio_export(ButtonGPIO); // push button 1
+	gpio_export(Button2GPIO); // push button 1
+	gpio_set_dir(ButtonGPIO, INPUT_PIN);   // The push button input
+	gpio_set_dir(Button2GPIO, INPUT_PIN); // The push button 2 input
+	unsigned int button_value = 0;
+
+	pwm.setPolarity(PWM::ACTIVE_HIGH);
+	pwm.setPeriod(20000000);
+	pwm.run();
+	pwm.setDutyCycle(570000u);
+
+	while(1){
+		do {
+					gpio_get_value(ButtonGPIO, &button_value);
+					usleep(1000);      // sleep for one millisecond
+				} while (button_value !=1);
+		pwm.setDutyCycle(1010000u);
+		usleep(1000000);
+		do {
+							gpio_get_value(ButtonGPIO, &button_value);
+							usleep(1000);      // sleep for one millisecond
+						} while (button_value !=1);
+		pwm.setDutyCycle(1450000u);
+		usleep(1000000);
+		do {
+							gpio_get_value(ButtonGPIO, &button_value);
+							usleep(1000);      // sleep for one millisecond
+						} while (button_value !=1);
+		pwm.setDutyCycle(1890000u);
+		usleep(1000000);
+		do {
+							gpio_get_value(ButtonGPIO, &button_value);
+							usleep(1000);      // sleep for one millisecond
+						} while (button_value !=1);
+		pwm.setDutyCycle(2350000u);
+		usleep(1000000);
+		do {
+							gpio_get_value(ButtonGPIO, &button_value);
+							usleep(1000);      // sleep for one millisecond
+						} while (button_value !=1);
+		pwm.setDutyCycle(1890000u);
+		usleep(1000000);
+		do {
+							gpio_get_value(ButtonGPIO, &button_value);
+							usleep(1000);      // sleep for one millisecond
+						} while (button_value !=1);
+		pwm.setDutyCycle(1450000u);
+		usleep(1000000);
+		do {
+							gpio_get_value(ButtonGPIO, &button_value);
+							usleep(1000);      // sleep for one millisecond
+						} while (button_value !=1);
+		pwm.setDutyCycle(1010000u);
+		usleep(1000000);
+		do {
+							gpio_get_value(ButtonGPIO, &button_value);
+							usleep(1000);      // sleep for one millisecond
+						} while (button_value !=1);
+		pwm.setDutyCycle(570000u);
+		usleep(1000000);
+
+
+	}

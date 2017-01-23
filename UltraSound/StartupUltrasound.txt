@@ -1,0 +1,3 @@
+sudo cp EBB-PRU-Example-00A0.dtbo /lib/firmware
+sudo sh -c "echo EBB-PRU-Example > $SLOTS"
+cat $SLOTS

@@ -1,0 +1,4 @@
+activeuserprofiles=ECE-DEB-VM;Team
+eclipse.preferences.version=1
+org.eclipse.rse.systemtype.local.systemType.defaultUserId=ececlass
+useridperkey=ECE-DEB-VM.BeagleBone\=debian;ECE-DEB-VM.Local\=ececlass;

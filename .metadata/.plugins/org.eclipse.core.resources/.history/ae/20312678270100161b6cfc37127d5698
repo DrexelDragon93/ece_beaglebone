@@ -1,0 +1,58 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Apr 12, 2016
+ *      Author: ececlass
+ */
+
+#include <iostream>
+#include <string>
+#include <unistd.h>
+#include "SimpleGPIO.h"
+#include "GPIO.h"
+using namespace exploringBB;
+using namespace std;
+
+
+
+int main(int argc, char *argv[]){
+
+	GPIO ledGPIO(49), button1GPIO(115), button2GPIO(117);
+
+	ledGPIO.setDirection(OUTPUT);
+	button2GPIO.setDirection(INPUT);
+
+
+unsigned int value = LOW;
+
+while(1){
+
+	gpio_get_value(ButtonGPIO, &value);
+
+	if(value == HIGH){
+		gpio_get_value(ButtonGPIO, &value);
+		while(value != HIGH){
+		gpio_set_value(LEDGPIO, HIGH);
+		usleep(100000);
+		gpio_set_value(LEDGPIO, LOW);
+		usleep(100000);
+		gpio_get_value(ButtonGPIO, &value);
+		}
+
+	}
+	else if(value == LOW){
+		gpio_set_value(LEDGPIO, LOW);
+	}
+
+}
+
+
+gpio_unexport(LEDGPIO);     // unexport the LED
+gpio_unexport(ButtonGPIO);  // unexport the push button
+return 0;
+
+
+
+
+}
+

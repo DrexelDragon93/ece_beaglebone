@@ -1,0 +1,20 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Mar 31, 2016
+ *      Author: ececlass
+ */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	float x0;
+
+	return 0;
+
+}
+
+
+

@@ -1,0 +1,6 @@
+22:37:30 **** Incremental Build of configuration Debug for project NightRider ****
+make all 
+make: Nothing to be done for 'all'.
+
+22:37:30 Build Finished (took 70ms)
+

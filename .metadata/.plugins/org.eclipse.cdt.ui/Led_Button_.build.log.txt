@@ -1,0 +1,7 @@
+01:35:19 **** Clean-only build of configuration Debug for project Led_Button_ ****
+make clean 
+rm -rf  ./SimpleGPIO.o ./main.o  ./SimpleGPIO.d ./main.d  Led_Button_
+ 
+
+01:35:19 Build Finished (took 68ms)
+

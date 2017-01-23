@@ -1,0 +1,51 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Apr 12, 2016
+ *      Author: ececlass
+ */
+
+#include <iostream>
+#include <string>
+#include <unistd.h>
+#include "SimpleGPIO.h"
+using namespace std;
+
+unsigned int LEDGPIO = 49;   // GPIO1_17 = (1x32) + 17 = 60
+unsigned int ButtonGPIO = 115;   //  GPIO3_19 = (3x32) + 19 = 15
+
+int main(int argc, char *argv[]){
+
+gpio_export(LEDGPIO);    // The LED
+gpio_export(ButtonGPIO);   // The push button switch
+gpio_set_dir(LEDGPIO, OUTPUT_PIN);   // The LED is an output
+gpio_set_dir(ButtonGPIO, INPUT_PIN);   // The push button input
+
+unsigned int value = LOW;
+
+while(1){
+
+	gpio_get_value(ButtonGPIO, &value);
+
+	if(value == HIGH){
+		gpio_get_value(ButtonGPIO, &value);
+		while(value != HIGH){
+		gpio_set_value(LEDGPIO, HIGH);
+		usleep(200000);
+		gpio_set_value(LEDGPIO, LOW);
+		usleep(200000);
+		}
+	}
+
+}
+
+
+gpio_unexport(LEDGPIO);     // unexport the LED
+gpio_unexport(ButtonGPIO);  // unexport the push button
+return 0;
+
+
+
+
+}
+
