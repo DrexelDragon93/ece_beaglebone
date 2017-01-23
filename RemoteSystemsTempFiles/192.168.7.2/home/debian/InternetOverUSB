@@ -1,0 +1,2 @@
+/sbin/route add default gw 192.168.7.1
+/usr/sbin/ntpdate -b -s -u us.pool.ntp.org

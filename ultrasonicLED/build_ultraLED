@@ -1,0 +1,3 @@
+#!/bin/sh
+pasm -b ultrasonic_LED.p
+gcc ultrasonic_LED.c -o ultrasonic_LED -lpthread -lprussdrv
